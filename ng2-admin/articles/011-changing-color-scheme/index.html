@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="keywords" content="admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript">
-    <title>ng2-admin documentation - Changing Color Scheme</title>
+    <title>ngx-admin documentation - Changing Color Scheme</title>
     <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css">
@@ -51,18 +51,18 @@
         <div class="inner-content">
           <h1>Changing Color Scheme</h1>
           <div class="subHeader"></div><p>We tried to make the process of color scheme customization as easy as<span class="widont">&nbsp;</span>possible. </p>
-<p>By default ng2-admin has three built-in color profiles: ng2 (default blue scheme), mint and blur.
+<p>By default ngx-admin has three built-in color profiles: ngx (default blue scheme), mint and blur.
 This article will help you to create your own color profile.
-Let’s say you want to make ng2-admin dark<span class="widont">&nbsp;</span>theme.</p>
-<p>First we advise you to take some existing colorscheme file as a starting point. 
+Let’s say you want to make ngx-admin dark<span class="widont">&nbsp;</span>theme.</p>
+<p>First we advise you to take an existing color scheme file as a starting point. 
 For light themes we suggest taking <code>src/app/theme/sass/conf/colorScheme/_mint.scss</code> and for 
 dark <code>src/app/theme/sass/conf/colorScheme/_blue.scss</code>.
-As we want a dark theme, we’re taking <code>blue</code>.</p>
+Since we want a dark them we will use code>src/app/theme/sass/conf/colorScheme/_blue.scss</code>.</p>
 <p>1) Copy <code>src/app/theme/sass/conf/colorScheme/_blue.scss</code> to <code>src/app/theme/sass/conf/colorScheme/_dark.scss</code>:
 <br><br></p>
-<p>2) Include your colorscheme file in <code>src/app/theme/sass/conf/conf.scss</code>.</p>
+<p>2) Include your color scheme file in <code>src/app/theme/sass/conf/conf.scss</code>.</p>
 <p>To do this,<span class="widont">&nbsp;</span>replace</p>
-<pre><code class="lang-scss"><span class="at_rule">@<span class="keyword">import</span> <span class="string">'colorSchemes/ng2'</span>;</span>
+<pre><code class="lang-scss"><span class="at_rule">@<span class="keyword">import</span> <span class="string">'colorSchemes/ngx'</span>;</span>
 </code></pre>
 <p>with</p>
 <pre><code class="lang-scss"><span class="at_rule">@<span class="keyword">import</span> <span class="string">'colorSchemes/dark'</span>;</span>
@@ -77,7 +77,7 @@ Uncomment the following<span class="widont">&nbsp;</span>line</p>
 <pre><code class="lang-javascript">  <span class="keyword">this</span>._baConfig.changeTheme({name: <span class="string">'dark'</span>});
 </code></pre>
 <p>Beside notifying the system which scheme is currently enabled, this also puts a css class to a main element 
-of the page. Thus you can freely create theme-specific css selectors in your code without breakking other themes’<span class="widont">&nbsp;</span>styles.</p>
+of the page. Thus you can freely create theme-specific css selectors in your code without breaking other themes’<span class="widont">&nbsp;</span>styles.</p>
 <p>For example like<span class="widont">&nbsp;</span>this:</p>
 <pre><code class="lang-scss">. dark <span class="class">.card-body</span> {
   <span class="attribute">background-color</span><span class="value">: white;</span>
@@ -86,7 +86,7 @@ of the page. Thus you can freely create theme-specific css selectors in your cod
 <p><br><br></p>
 <p>4) Change the<span class="widont">&nbsp;</span>colors:</p>
 <p>Now you can start changing the colors.
-For example, after playing a bit with different colors, we changed the 2 first main variables in <code>_dark.scss</code> file:</p>
+For example, after playing a bit with different colors, we changed the first 2 main variables in <code>_dark.scss</code> file:</p>
 <pre><code class="lang-sass">$body-bg: #636363;
 $bootstrap-panel-bg: rgba(#000000, 0.2);
 </code></pre>
@@ -134,7 +134,7 @@ To do this, add the following code to the configuration block inside <code>src/a
     },
   });
 </code></pre>
-<p>Here we defined a list of main colors <code>colorScheme</code> and then made light and dark versions of those using <code>colorHelper</code> methods. 
+<p>Here we defined a list of main <code>colorScheme</code> colors and then made light and dark versions of those using <code>colorHelper</code> methods. 
 We also defined a couple of custom colors for dashboard<span class="widont">&nbsp;</span>charts.</p>
 <p>That’s basically it! Right now your admin application should look like<span class="widont">&nbsp;</span>this:</p>
 <p><img src="/ng2-admin/articles/011-changing-color-scheme/new-color-scheme.png" alt=""></p>
